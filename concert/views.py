@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView
 
 from concert.models import Concert
-from concert.serializers import ListConcertSerializer
+from concert.serializers import ListConcertSerializer, ConcertSerializer
 
 
 class ListAllConcertAPIView(ListAPIView):
@@ -10,5 +10,5 @@ class ListAllConcertAPIView(ListAPIView):
 
 
 class ConcertAPIView(RetrieveAPIView):
-    queryset = ...
-    serializer_class = ...
+    queryset = Concert.objects.all()
+    serializer_class = ConcertSerializer

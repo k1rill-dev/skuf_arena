@@ -13,16 +13,35 @@ class Concert(models.Model):
     def __str__(self):
         return self.title
 
+    @property
+    def tags(self):
+        return self.concerttags_set.all()
+
+    @property
+    def photos(self):
+        return self.concertphotos_set.all()
+
+    @property
+    def videos(self):
+        return self.concertvideos_set.all()
+
+    @property
+    def prices(self):
+        return self.concertpricelist_set.all()
+
     class Meta:
         verbose_name = 'Концерт'
         verbose_name_plural = 'Концерты'
 
 
 class BaseConcertExtension(models.Model):
-    concert = models.ForeignKey(Concert, on_delete=models.CASCADE, verbose_name="Концерт")
+    concert = models.ForeignKey(Concert, on_delete=models.CASCADE, related_name='%(class)s_set', verbose_name="Концерт")
 
     def __str__(self):
         return f"{self.concert}"
+
+    class Meta:
+        abstract = True
 
 
 class ConcertPhotos(BaseConcertExtension):

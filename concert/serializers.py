@@ -1,11 +1,6 @@
+from django.db.models import Min
 from rest_framework import serializers
 from concert.models import Concert, ConcertTags, ConcertPhotos, ConcertVideos, ConcertPriceList
-
-
-class ListConcertSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Concert
-        fields = ('artist', 'title', 'date')
 
 
 class ConcertTagSerializer(serializers.ModelSerializer):
@@ -32,6 +27,26 @@ class ConcertPriceListSerializer(serializers.ModelSerializer):
         fields = ('place', 'price')
 
 
+class ListConcertSerializer(serializers.ModelSerializer):
+    photo_concert = serializers.SerializerMethodField()
+    price = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Concert
+        fields = ('artist', 'title', 'date', 'address', 'photo_concert', 'price')
+        depth = 1
+
+    def get_photo_concert(self, obj):
+        query = ConcertPhotos.objects.filter(concert_id=obj.id).first()
+        serializer = ConcertPhotoSerializer(query)
+        return {**serializer.data}
+
+    def get_price(self, obj):
+        query = ConcertPriceList.objects.filter(concert_id=obj.id).order_by('price').first()
+        serializer = ConcertPriceListSerializer(query)
+        return {**serializer.data}
+
+
 class ConcertSerializer(serializers.ModelSerializer):
     tags = ConcertTagSerializer(many=True)
     photos = ConcertPhotoSerializer(many=True)
@@ -41,7 +56,6 @@ class ConcertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Concert
         fields = (
-            'artist', 'title', 'date', 'description', 'vk_event', 'address', 'date', 'tags', 'photos', 'videos',
-            'prices'
+            'artist', 'title', 'date', 'description', 'vk_event', 'address',
+            'tags', 'photos', 'videos', 'prices'
         )
-        depth = 1
