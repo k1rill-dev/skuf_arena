@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="init and create auth service, create models for tickets service and concert service">
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add list all concerts endpoint &amp; add concert info endpoint">
+      <change afterPath="$PROJECT_DIR$/tickets/migrations/0002_alter_ticket_options_ticket_qr_code.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concert/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concert/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,7 @@
       <workItem from="1714491404306" duration="8208000" />
       <workItem from="1714519161627" duration="21000" />
       <workItem from="1714555500136" duration="1778000" />
-      <workItem from="1714558284185" duration="7302000" />
+      <workItem from="1714558284185" duration="11905000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -123,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714560847926</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add list all concerts endpoint &amp; add concert info endpoint">
+      <option name="closed" value="true" />
+      <created>1714565930557</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714565930557</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +141,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init and create auth service, create models for tickets service and concert service" />
-    <option name="LAST_COMMIT_MESSAGE" value="init and create auth service, create models for tickets service and concert service" />
+    <MESSAGE value="add list all concerts endpoint &amp; add concert info endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="add list all concerts endpoint &amp; add concert info endpoint" />
   </component>
 </project>

@@ -24,16 +24,17 @@ class ConcertVideoSerializer(serializers.ModelSerializer):
 class ConcertPriceListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ConcertPriceList
-        fields = ('place', 'price')
+        fields = ('id', 'place', 'price')
 
 
 class ListConcertSerializer(serializers.ModelSerializer):
     photo_concert = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
+    tags = ConcertTagSerializer(many=True)
 
     class Meta:
         model = Concert
-        fields = ('artist', 'title', 'date', 'address', 'photo_concert', 'price')
+        fields = ('id', 'artist', 'title', 'date', 'address', 'photo_concert', 'price', 'tags')
         depth = 1
 
     def get_photo_concert(self, obj):
@@ -56,6 +57,6 @@ class ConcertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Concert
         fields = (
-            'artist', 'title', 'date', 'description', 'vk_event', 'address',
+            'id', 'artist', 'title', 'date', 'description', 'vk_event', 'address',
             'tags', 'photos', 'videos', 'prices'
         )

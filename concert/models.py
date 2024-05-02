@@ -75,3 +75,6 @@ class ConcertPriceList(BaseConcertExtension):
     class Meta:
         verbose_name = 'Цена'
         verbose_name_plural = 'Цены'
+
+    def __str__(self):
+        return f'{self.place} - {self.price}'
