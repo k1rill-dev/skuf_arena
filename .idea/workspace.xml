@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add list all concerts endpoint &amp; add concert info endpoint">
-      <change afterPath="$PROJECT_DIR$/tickets/migrations/0002_alter_ticket_options_ticket_qr_code.py" afterDir="false" />
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add qr code generation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skuf_arena_tickets/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/skuf_arena_tickets/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,24 +20,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "k1rill-dev"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;k1rill-dev&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/k1rill-dev/skuf_arena.git",
-    "accountId": "2633ac30-baaf-430d-b09f-99050006d2d0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/k1rill-dev/skuf_arena.git&quot;,
+    &quot;accountId&quot;: &quot;2633ac30-baaf-430d-b09f-99050006d2d0&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -54,22 +48,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Django Server.skuf_arena_tickets.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Django Server.skuf_arena_tickets.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PythonProjects/skuf_arena_tickets/frontend/package.json&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="npm.start">
     <configuration name="skuf_arena_tickets" type="Python.DjangoServer" factoryName="Django server">
       <module name="skuf_arena_tickets" />
       <option name="ENV_FILES" value="" />
@@ -80,6 +76,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="skuf_arena_tickets.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.10 (skuf_arena_tickets)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -95,6 +92,17 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.skuf_arena_tickets" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -116,6 +124,10 @@
       <workItem from="1714519161627" duration="21000" />
       <workItem from="1714555500136" duration="1778000" />
       <workItem from="1714558284185" duration="11905000" />
+      <workItem from="1714626732291" duration="12080000" />
+      <workItem from="1714651089409" duration="5686000" />
+      <workItem from="1714679887431" duration="2745000" />
+      <workItem from="1714712944756" duration="323000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -133,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714565930557</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add qr code generation">
+      <option name="closed" value="true" />
+      <created>1714626760439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714626760439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init and create auth service, create models for tickets service and concert service" />
     <MESSAGE value="add list all concerts endpoint &amp; add concert info endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="add list all concerts endpoint &amp; add concert info endpoint" />
+    <MESSAGE value="add qr code generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add qr code generation" />
   </component>
 </project>
