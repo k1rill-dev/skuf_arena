@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from authentication.models import User
+
 
 class Concert(models.Model):
     artist = models.CharField(max_length=100, verbose_name="Артист")
@@ -8,6 +10,7 @@ class Concert(models.Model):
     description = models.TextField(verbose_name="Описание")
     vk_event = models.CharField(max_length=100, verbose_name="Ссылка на ВК")
     address = models.CharField(max_length=100, verbose_name="Адрес")
+    age_limit = models.IntegerField(verbose_name='Возрастное ограничение', default=16)
     date = models.DateTimeField(verbose_name='Дата проведения', default=timezone.now)
 
     def __str__(self):
@@ -42,6 +45,18 @@ class BaseConcertExtension(models.Model):
 
     class Meta:
         abstract = True
+
+
+class ConcertRating(BaseConcertExtension):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
+    rating = models.FloatField(max_length=5, verbose_name='Рейтинг')
+
+    def __str__(self):
+        return f"{self.rating} - {self.concert} - {self.user}"
+
+    class Meta:
+        verbose_name = 'Рейтинг'
+        verbose_name_plural = 'Рейтинг'
 
 
 class ConcertPhotos(BaseConcertExtension):

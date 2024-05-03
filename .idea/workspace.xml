@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add qr code generation">
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add login, register, header, carousel, card components. Start build main page of service">
+      <change afterPath="$PROJECT_DIR$/authentication/migrations/0002_user_date_of_birth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/migrations/0003_alter_user_date_of_birth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/concert/migrations/0002_concert_age_limit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skuf_arena_tickets/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/skuf_arena_tickets/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,24 +58,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Django Server.skuf_arena_tickets.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PythonProjects/skuf_arena_tickets/frontend/package.json&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Django Server.skuf_arena_tickets.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/PythonProjects/skuf_arena_tickets/frontend/package.json",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="npm.start">
+}]]></component>
+  <component name="RunManager" selected="Django Server.skuf_arena_tickets">
     <configuration name="skuf_arena_tickets" type="Python.DjangoServer" factoryName="Django server">
       <module name="skuf_arena_tickets" />
       <option name="ENV_FILES" value="" />
@@ -127,7 +138,7 @@
       <workItem from="1714626732291" duration="12080000" />
       <workItem from="1714651089409" duration="5686000" />
       <workItem from="1714679887431" duration="2745000" />
-      <workItem from="1714712944756" duration="323000" />
+      <workItem from="1714712944756" duration="3569000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -153,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714626760439</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add login, register, header, carousel, card components. Start build main page of service">
+      <option name="closed" value="true" />
+      <created>1714713414972</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714713414972</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +182,7 @@
     <MESSAGE value="init and create auth service, create models for tickets service and concert service" />
     <MESSAGE value="add list all concerts endpoint &amp; add concert info endpoint" />
     <MESSAGE value="add qr code generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add qr code generation" />
+    <MESSAGE value="add login, register, header, carousel, card components. Start build main page of service" />
+    <option name="LAST_COMMIT_MESSAGE" value="add login, register, header, carousel, card components. Start build main page of service" />
   </component>
 </project>

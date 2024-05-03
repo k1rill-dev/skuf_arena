@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from concert.models import Concert, ConcertPhotos, ConcertVideos, ConcertTags, ConcertPriceList
+from concert.models import Concert, ConcertPhotos, ConcertVideos, ConcertTags, ConcertPriceList, ConcertRating
 
 
 class PhotoInline(admin.StackedInline):
@@ -23,8 +23,13 @@ class VideosInline(admin.StackedInline):
     extra = 1
 
 
+class RatingInline(admin.StackedInline):
+    model = ConcertRating
+    extra = 1
+
+
 class ConcertAdmin(admin.ModelAdmin):
-    inlines = (PhotoInline, TagsInline, PriceListInline, VideosInline,)
+    inlines = (PhotoInline, TagsInline, PriceListInline, VideosInline, RatingInline)
 
 
 admin.site.register(Concert, ConcertAdmin)

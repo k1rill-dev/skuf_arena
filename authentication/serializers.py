@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
-            'id', 'email', 'username', 'first_name', 'last_name')
+            'id', 'email', 'username', 'first_name', 'last_name', 'date_of_birth')
 
 
 class RotateTokenSerializer(TokenRefreshSerializer):
@@ -33,6 +33,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(write_only=True)
     first_name = serializers.CharField(max_length=255, required=True)
     last_name = serializers.CharField(max_length=255, required=True)
+    date_of_birth = serializers.DateField(required=True)
 
     def create(self, validated_data):
         if validated_data['password1'] != validated_data['password2']:
@@ -41,7 +42,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             email=validated_data['email'],
             username=validated_data['username'],
             first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'])
+            last_name=validated_data['last_name'], date_of_birth=validated_data['date_of_birth'])
         user.set_password(validated_data['password1'])
         user.save()
         return user
@@ -49,7 +50,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
-            'email', 'username', 'first_name', 'last_name', 'password1', 'password2')
+            'email', 'username', 'first_name', 'last_name', 'password1', 'password2', 'date_of_birth')
 
 
 class PhotoSerializer(serializers.ModelSerializer):
