@@ -27,7 +27,7 @@ class Ticket(models.Model):
         canvas = Image.new('RGB', (500, 500), 'white')
         canvas.paste(qrcode_img)
         user = self.user.first_name if self.user.first_name != "" else self.user.username
-        fname = f'qr_code-{user}-{kwargs["event"]}.png'
+        fname = f'qr_code-{user}-{self.pk}.png'
         buffer = BytesIO()
         canvas.save(buffer, 'PNG')
         self.qr_code.save(fname, File(buffer), save=False)

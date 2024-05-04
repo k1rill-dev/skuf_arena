@@ -7,6 +7,9 @@ import LoginForm from "./components/Forms/LoginForm";
 import RegistrationForm from "./components/Forms/RegistrationForm";
 import LogoutForm from "./components/Forms/LogoutForm";
 import MainPage from "./components/Pages/MainPage";
+import Footer from "./components/Footer/Footer";
+import Concerts from "./components/Pages/Concerts";
+import Concert from "./components/Pages/Concert";
 
 
 function App() {
@@ -19,8 +22,28 @@ function App() {
                         <Header isAuthorized={isAuthorized}></Header>
                         {/*<div className="mt-4"></div>*/}
                         <MainPage></MainPage>
+                        <Footer></Footer>
                     </div>
                 )}>
+                </Route>
+                <Route path="/concerts" element={(
+                    <div>
+                        <Header isAuthorized={isAuthorized}></Header>
+                        <div className="mt-4"></div>
+                        <Concerts/>
+                        <Footer></Footer>
+                    </div>
+                )}></Route>
+                <Route path="/concert">
+                    <Route path=":id" element={(
+                        <div>
+                            <Header isAuthorized={isAuthorized}></Header>
+                            <div className="mt-4"></div>
+                            <Concert></Concert>
+                            <Footer></Footer>
+                        </div>
+                    )}>
+                    </Route>
                 </Route>
                 <Route path="/logout" element={(
                     <div>
