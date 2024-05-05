@@ -3,7 +3,7 @@ import {Carousel} from "flowbite-react";
 
 const CustomCarousel = () => {
     return (
-        <div className="container px-2 py-10 mx-auto flex flex-wrap rounded-md">
+        <div className="container px-2 py-4 mx-auto flex flex-wrap rounded-md">
             <Carousel pauseOnHover slideInterval={3000} className="mx-auto">
                 <div className="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4 rounded-md">
                     <img alt="gallery"

@@ -19,7 +19,7 @@ const CardComponent = ({...props}) => {
                 {props.artist}
             </p>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-                {date.getDay()}/{date.getMonth()}/{date.getFullYear()} {date.getHours()}:{
+                {date.getDay()}/{date.getMonth()+1}/{date.getFullYear()} {date.getHours()}:{
                 date.getMinutes() < 10 ?
                     <a>0{date.getMinutes()}</a>
                     : <a>{date.getMinutes()}</a>

@@ -10,6 +10,8 @@ import MainPage from "./components/Pages/MainPage";
 import Footer from "./components/Footer/Footer";
 import Concerts from "./components/Pages/Concerts";
 import Concert from "./components/Pages/Concert";
+import Profile from "./components/Pages/Profile";
+import EditProfileForm from "./components/Forms/EditProfileForm";
 
 
 function App() {
@@ -45,6 +47,23 @@ function App() {
                     )}>
                     </Route>
                 </Route>
+                <Route path="/profile" element={(
+                    <div>
+                        <Header isAuthorized={isAuthorized}></Header>
+                        <div className="mt-4"></div>
+                        <Profile/>
+                        <Footer></Footer>
+                    </div>
+                )}></Route>
+                <Route path="/edit-profile" element={(
+                    <div>
+                        <Header isAuthorized={isAuthorized}></Header>
+                        <div className="mt-4"></div>
+                        <EditProfileForm/>
+                        <div className="mt-28"></div>
+                        <Footer></Footer>
+                    </div>
+                )}></Route>
                 <Route path="/logout" element={(
                     <div>
                         <LogoutForm></LogoutForm>

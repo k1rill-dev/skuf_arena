@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add age limitation and rating to every concert">
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add concerts page, add infinitive scroll to concerts page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/concert/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Card/CardComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Card/CardComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skuf_arena_tickets/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/skuf_arena_tickets/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Carousel/CustomCarousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Carousel/CustomCarousel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concerts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concerts.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,25 +53,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Django Server.skuf_arena_tickets.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/PythonProjects/skuf_arena_tickets/frontend/package.json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "terminal",
-    "ts.external.directory.path": "D:\\IDEs\\PyCharm Professional\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Django Server.skuf_arena_tickets.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PythonProjects/skuf_arena_tickets/frontend/package.json&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\IDEs\\PyCharm Professional\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.start">
     <configuration name="skuf_arena_tickets" type="Python.DjangoServer" factoryName="Django server">
       <module name="skuf_arena_tickets" />
@@ -141,7 +139,7 @@
       <workItem from="1714745282670" duration="50000" />
       <workItem from="1714761655541" duration="78000" />
       <workItem from="1714763814885" duration="2852000" />
-      <workItem from="1714798798079" duration="6933000" />
+      <workItem from="1714798798079" duration="18335000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -183,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714716697609</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add concerts page, add infinitive scroll to concerts page">
+      <option name="closed" value="true" />
+      <created>1714806120189</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714806120189</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +201,7 @@
     <MESSAGE value="add qr code generation" />
     <MESSAGE value="add login, register, header, carousel, card components. Start build main page of service" />
     <MESSAGE value="add age limitation and rating to every concert" />
-    <option name="LAST_COMMIT_MESSAGE" value="add age limitation and rating to every concert" />
+    <MESSAGE value="add concerts page, add infinitive scroll to concerts page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add concerts page, add infinitive scroll to concerts page" />
   </component>
 </project>
