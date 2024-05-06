@@ -12,5 +12,6 @@ class ListAllConcertAPIView(ListAPIView):
 
 
 class ConcertAPIView(RetrieveAPIView):
+    permission_classes = (AllowAny,)
     queryset = Concert.objects.all()
     serializer_class = ConcertSerializer

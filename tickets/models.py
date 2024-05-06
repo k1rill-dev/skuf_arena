@@ -24,7 +24,7 @@ class Ticket(models.Model):
         data = f'{self.user} | {self.event} | {self.price} | {self.buy_date.strftime("%Y-%m-%d %H:%M")}'
         qrcode_img = qrcode.make(
             data)
-        canvas = Image.new('RGB', (500, 500), 'white')
+        canvas = Image.new('RGB', (1000, 1000), 'white')
         canvas.paste(qrcode_img)
         user = self.user.first_name if self.user.first_name != "" else self.user.username
         fname = f'qr_code-{user}-{self.pk}.png'

@@ -3,7 +3,6 @@ import {Button, Card} from "flowbite-react";
 
 const CardComponent = ({...props}) => {
     let date = new Date(props.date);
-    console.log(date)
     return (
         <Card
             // max-w-sm

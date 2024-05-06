@@ -12,6 +12,7 @@ class Concert(models.Model):
     address = models.CharField(max_length=100, verbose_name="Адрес")
     age_limit = models.IntegerField(verbose_name='Возрастное ограничение', default=16)
     date = models.DateTimeField(verbose_name='Дата проведения', default=timezone.now)
+    is_held = models.BooleanField(default=False, verbose_name='Прошел ли концерт')
 
     def __str__(self):
         return self.title

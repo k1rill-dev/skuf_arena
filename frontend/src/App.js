@@ -12,6 +12,7 @@ import Concerts from "./components/Pages/Concerts";
 import Concert from "./components/Pages/Concert";
 import Profile from "./components/Pages/Profile";
 import EditProfileForm from "./components/Forms/EditProfileForm";
+import Ticket from "./components/Pages/Ticket";
 
 
 function App() {
@@ -42,6 +43,18 @@ function App() {
                             <Header isAuthorized={isAuthorized}></Header>
                             <div className="mt-4"></div>
                             <Concert></Concert>
+                            <Footer></Footer>
+                        </div>
+                    )}>
+                    </Route>
+                </Route>
+                <Route path="/ticket">
+                    <Route path=":id" element={(
+                        <div>
+                            <Header isAuthorized={isAuthorized}></Header>
+                            <div className="mt-4"></div>
+                            <Ticket></Ticket>
+                            <div className="mb-4"></div>
                             <Footer></Footer>
                         </div>
                     )}>

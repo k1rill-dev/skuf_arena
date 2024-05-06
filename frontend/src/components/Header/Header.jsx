@@ -21,14 +21,13 @@ const Header = () => {
           Скуф Арена
         </div>
         <nav className="hidden md:flex md:items-center md:space-x-4 md:flex-1 md:justify-center">
-          <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">Главная</a>
-          <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">Афиша</a>
-          <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">Контакты</a>
+          <a href="/" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">Главная</a>
+          <a href="/concerts" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out">Афиша</a>
         </nav>
         <div className="flex items-center">
           <nav className="hidden md:flex md:items-center md:space-x-4">
             <img className="h-8 w-8 rounded-full" src="https://placehold.co/600x400.png" alt="User Avatar" />
-            <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">Профиль</a>
+            <a href="/profile" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">Профиль</a>
           </nav>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
@@ -46,12 +45,11 @@ const Header = () => {
           </svg>
         </button>
         <div className="py-2 flex flex-col items-center">
-          <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out block py-2">Главная</a>
-          <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out block py-2">Афиша</a>
-          <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out block py-2">Контакты</a>
+          <a href="/" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out block py-2">Главная</a>
+          <a href="/concerts" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out block py-2">Афиша</a>
           <div className="flex items-center mt-4">
             <img className="h-8 w-8 rounded-full" src="https://placehold.co/600x400.png" alt="User Avatar" />
-            <a href="#" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">Профиль</a>
+            <a href="/profile" className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">Профиль</a>
           </div>
         </div>
       </nav>
