@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import CardComponent from '../Card/CardComponent';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -87,11 +87,9 @@ const Concerts = () => {
                             .map((item) => (
                                 <CardComponent
                                     key={item.id}
-                                    className={'max-w-xs'}
-                                    id={item.id}
-                                    name={item.title}
-                                    artist={item.artist}
-                                    date={item.date}
+                                    class={'max-w-md flex w-80 h-100 overflow-hidden'}
+                                    d={item.id}
+                                    name={item.title} artist={item.artist} date={item.date}
                                     price={item.price.price}
                                     img={'http://127.0.0.1:8000' + item.photo_concert.photo}
                                 />

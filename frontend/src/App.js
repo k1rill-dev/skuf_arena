@@ -16,7 +16,7 @@ import Ticket from "./components/Pages/Ticket";
 
 
 function App() {
-    const isAuthorized = true;
+    const isAuthorized = false;
     return (
         <BrowserRouter>
             <Routes>
