@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="frontend: add multi-step buy ticket form, add ticket page. &#10;backend: add retrieve ticket api">
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="register service worker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,7 @@
       <workItem from="1714907661231" duration="70000" />
       <workItem from="1714916278522" duration="11029000" />
       <workItem from="1714929931786" duration="547000" />
-      <workItem from="1714972011550" duration="15581000" />
+      <workItem from="1714972011550" duration="16231000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -204,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714987056471</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="register service worker">
+      <option name="closed" value="true" />
+      <created>1714988091221</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714988091221</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +227,7 @@
     <MESSAGE value="add concerts page, add infinitive scroll to concerts page" />
     <MESSAGE value="add video to concert page, add profile and edit profile pages" />
     <MESSAGE value="frontend: add multi-step buy ticket form, add ticket page. &#10;backend: add retrieve ticket api" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend: add multi-step buy ticket form, add ticket page. &#10;backend: add retrieve ticket api" />
+    <MESSAGE value="register service worker" />
+    <option name="LAST_COMMIT_MESSAGE" value="register service worker" />
   </component>
 </project>

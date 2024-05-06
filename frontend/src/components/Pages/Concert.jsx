@@ -37,8 +37,8 @@ const Concert = ({...props}) => {
                             <BuyTicketForm openModal={openModal} handleModal={handleModal} />
                         </div>
                         <div className="mt-4 flex items-center">
-                            <FaVk className="mr-2" size={24}/> {/* Иконка VK */}
-                            <p className="text-gray-500">Группа в VK</p>
+                            <FaVk className="mr-2" size={24}/>{/* Иконка VK */}
+                            <a href={"https://vk.com"}><p className="text-gray-500">Группа в VK</p></a>
                         </div>
                     </div>
                     <div className="mt-4">
