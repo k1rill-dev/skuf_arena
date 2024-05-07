@@ -2,7 +2,6 @@ import React from 'react';
 import {Carousel} from "flowbite-react";
 
 const MainPageCarousel = ({concerts}) => {
-    console.log(concerts)
     if (concerts && concerts.length > 1) {
         return (
             <div className="container px-2 py-4 mx-auto flex flex-wrap rounded-md ">

@@ -55,7 +55,7 @@ const Concert = ({...props}) => {
                         </div>
                         <div className="mt-4 flex items-center">
                             <FaVk className="mr-2" size={24}/>
-                            <a href={"https://vk.com"}><p className="text-gray-500">Группа в VK</p></a>
+                            <a href={concertInfo.vk_event}><p className="text-gray-500">Группа в VK</p></a>
                         </div>
                     </div>
                     <div className="mt-4">

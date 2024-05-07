@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Header = ({isAuthorized}) => {
+const Header = ({isAuthorized, email}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -32,11 +32,11 @@ const Header = ({isAuthorized}) => {
                     <nav className="hidden md:flex md:items-center md:space-x-4">
                         {isAuthorized
                             ? (
-                                <div>
+                                <div className={"flex flex-wrap items-center justify-center space-x-4"}>
                                     <img className="h-8 w-8 rounded-full" src="https://placehold.co/600x400.png"
                                          alt="User Avatar"/>
                                     <a href="/profile"
-                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">Профиль</a>
+                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">{email}</a>
                                 </div>
                             )
                             : (
@@ -69,12 +69,10 @@ const Header = ({isAuthorized}) => {
                     <div className="flex items-center mt-4">
                         {isAuthorized
                             ? (
-                                <div><img className="h-8 w-8 rounded-full" src="https://placehold.co/600x400.png"
-                                          alt="User Avatar"/>
+                                <div className={"flex flex-wrap items-center justify-center space-x-4"}>
                                     <a href="/profile"
-                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">Профиль</a>
+                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">{email}</a>
                                 </div>
-
                             )
                             : (
                                 <a href='/login'>Войти в аккаунт</a>

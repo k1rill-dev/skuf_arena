@@ -12,7 +12,7 @@ const MainPage = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const {data: response} = await axios.get('http://127.0.0.1:8000/api/concerts');
+                const {data: response} = await axios.get('http://localhost:8000/api/concerts');
                 setConcerts(response.results)
             } catch (error) {
                 console.error(error.message);

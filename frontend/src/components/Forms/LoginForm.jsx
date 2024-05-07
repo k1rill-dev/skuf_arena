@@ -1,5 +1,31 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
+
+async function loginUser(dataUser) {
+    try {
+        const {data, status} = await axios.post (
+            'http://localhost:8000/api/auth/login',
+                dataUser,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                    withCredentials: true
+                },
+        );
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.log('error message: ', error.message);
+            return error.message;
+        } else {
+            console.log('unexpected error: ', error);
+            return 'An unexpected error occurred';
+        }
+    }
+}
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -16,23 +42,21 @@ const LoginForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(event);
-        nav('/')
-        // let userData = {
-        //     email: email,
-        //     password: password
-        // }
-        // const userInfo = await loginUser(userData).then(
-        //     r => {
-        //         return JSON.stringify(r, null, 4)
-        //     })
-        // try {
-        //     if ("Success" in JSON.parse(userInfo))
-        //         localStorage.setItem("userInfo", userInfo);
-        //     nav('/index')
-        // } catch (e) {
-        //
-        // }
+        let userData = {
+            email: email,
+            password: password
+        }
+        const userInfo = await loginUser(userData).then(
+            r => {
+                return JSON.stringify(r, null, 4)
+            })
+        try {
+            if ("Success" in JSON.parse(userInfo))
+                localStorage.setItem("userInfo", userInfo);
+            nav('/')
+        } catch (e) {
+
+        }
     };
 
     return (

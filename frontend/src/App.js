@@ -16,13 +16,26 @@ import Ticket from "./components/Pages/Ticket";
 
 
 function App() {
-    const isAuthorized = false;
+    let email = ''
+    const authCheck = () => {
+        try {
+            if (JSON.parse(localStorage.userInfo).Success === "Login successfully")
+                return [true, JSON.parse(localStorage.userInfo)];
+        } catch (e) {
+            return [false, null];
+        }
+        return [false, null];
+    }
+    const [isAuthorized, user] = authCheck();
+    if (user !== null){
+        email = user.email
+    }
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={(
                     <div>
-                        <Header isAuthorized={isAuthorized}></Header>
+                        <Header isAuthorized={isAuthorized} email={email}></Header>
                         {/*<div className="mt-4"></div>*/}
                         <MainPage></MainPage>
                         <Footer></Footer>
@@ -31,7 +44,7 @@ function App() {
                 </Route>
                 <Route path="/concerts" element={(
                     <div>
-                        <Header isAuthorized={isAuthorized}></Header>
+                        <Header isAuthorized={isAuthorized} email={email}></Header>
                         <div className="mt-4"></div>
                         <Concerts/>
                         <Footer></Footer>
@@ -40,7 +53,7 @@ function App() {
                 <Route path="/concert">
                     <Route path=":id" element={(
                         <div>
-                            <Header isAuthorized={isAuthorized}></Header>
+                            <Header isAuthorized={isAuthorized} email={email}></Header>
                             <div className="mt-4"></div>
                             <Concert></Concert>
                             <Footer></Footer>
@@ -51,9 +64,9 @@ function App() {
                 <Route path="/ticket">
                     <Route path=":id" element={(
                         <div>
-                            <Header isAuthorized={isAuthorized}></Header>
+                            <Header isAuthorized={isAuthorized} email={email}></Header>
                             <div className="mt-4"></div>
-                            <Ticket></Ticket>
+                            <Ticket user={user}></Ticket>
                             <div className="mb-4"></div>
                             <Footer></Footer>
                         </div>
@@ -62,17 +75,17 @@ function App() {
                 </Route>
                 <Route path="/profile" element={(
                     <div>
-                        <Header isAuthorized={isAuthorized}></Header>
+                        <Header isAuthorized={isAuthorized} email={email}></Header>
                         <div className="mt-4"></div>
-                        <Profile/>
+                        <Profile user={user}/>
                         <Footer></Footer>
                     </div>
                 )}></Route>
                 <Route path="/edit-profile" element={(
                     <div>
-                        <Header isAuthorized={isAuthorized}></Header>
+                        <Header isAuthorized={isAuthorized} email={email}></Header>
                         <div className="mt-4"></div>
-                        <EditProfileForm/>
+                        <EditProfileForm user={user}/>
                         <div className="mt-28"></div>
                         <Footer></Footer>
                     </div>

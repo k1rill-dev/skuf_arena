@@ -13,7 +13,7 @@ const Concerts = () => {
 
     useEffect(() => {
         axios
-            .get('http://127.0.0.1:8000/api/concerts?page=1')
+            .get('http://localhost:8000/api/concerts?page=1')
             .then((res) => {
                 setItems(res.data.results);
                 setFilteredItems(res.data.results);
@@ -23,7 +23,7 @@ const Concerts = () => {
 
     const fetchMoreData = () => {
         axios
-            .get(`http://127.0.0.1:8000/api/concerts?page=${index}`)
+            .get(`http://localhost:8000/api/concerts?page=${index}`)
             .then((res) => {
                 setItems((prevItems) => [...prevItems, ...res.data.results]);
                 setFilteredItems((prevItems) => [...prevItems, ...res.data.results]);
@@ -88,7 +88,7 @@ const Concerts = () => {
                                 <CardComponent
                                     key={item.id}
                                     class={'max-w-md flex w-80 h-100 overflow-hidden'}
-                                    d={item.id}
+                                    id={item.id}
                                     name={item.title} artist={item.artist} date={item.date}
                                     price={item.price.price}
                                     img={'http://127.0.0.1:8000' + item.photo_concert.photo}

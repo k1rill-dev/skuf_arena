@@ -1,11 +1,44 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
+import {Datepicker} from "flowbite-react";
+import formatDate from "../../tools/formatDate";
+
+async function createUser(dataUser) {
+    try {
+        console.log(dataUser);
+        // 👇️ const data: CreateUserResponse
+        const {data, status} = await axios.post(
+            'http://localhost:8000/api/auth/register',
+            dataUser,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        );
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.log('error message: ', error.message);
+            // 👇️ error: AxiosError<any, any>
+            return error.message;
+        } else {
+            console.log('unexpected error: ', error);
+            return 'An unexpected error occurred';
+        }
+    }
+}
+
+
 
 const RegistrationForm = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [password, setPassword] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const nav = useNavigate();
@@ -29,33 +62,33 @@ const RegistrationForm = () => {
     const handleSurnameChange = (event) => {
         setSurname(event.target.value);
     }
-
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log({
+        let userData = {
             email: email,
-            password: password,
-            name: name,
-            surname: surname
-        });
-        nav('/login')
-        // let userData = {
-        //     email: email,
-        //     password: password
-        // }
-        // const userInfo = await loginUser(userData).then(
-        //     r => {
-        //         return JSON.stringify(r, null, 4)
-        //     })
-        // try {
-        //     if ("Success" in JSON.parse(userInfo))
-        //         localStorage.setItem("userInfo", userInfo);
-        //     nav('/index')
-        // } catch (e) {
-        //
-        // }
-    };
+            username: name,
+            first_name: name,
+            last_name: surname,
+            password1: password,
+            password2: repeatPassword,
+            date_of_birth: formatDate(dateOfBirth),
+        }
 
+        const userInfo = await createUser(userData).then(
+            r => {
+                return JSON.stringify(r, null, 4)
+            })
+        try {
+            if ("Success" in JSON.parse(userInfo))
+                localStorage.setItem("userInfo", userInfo);
+            nav('/login')
+        } catch (e) {
+
+        }
+    };
+const handleDateChange = (date) => {
+    setDateOfBirth(date);
+};
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center px-4 py-8">
             <div className="max-w-md w-full space-y-8">
@@ -111,6 +144,14 @@ const RegistrationForm = () => {
                             className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:ring-w-1 focus:ring-opacity-50 text-gray-700 sm:text-sm"
                             value={surname}
                             onChange={handleSurnameChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="dateOfBirth" className="block text-sm font-medium text-gray-700">
+                            Дата рождения
+                        </label>
+                        <Datepicker
+                            onSelectedDateChanged={handleDateChange}
                         />
                     </div>
                     <div>
