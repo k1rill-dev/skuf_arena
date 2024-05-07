@@ -30,6 +30,7 @@ function App() {
     if (user !== null){
         email = user.email
     }
+
     return (
         <BrowserRouter>
             <Routes>
@@ -77,7 +78,7 @@ function App() {
                     <div>
                         <Header isAuthorized={isAuthorized} email={email}></Header>
                         <div className="mt-4"></div>
-                        <Profile user={user}/>
+                        <Profile userInfo={user}/>
                         <Footer></Footer>
                     </div>
                 )}></Route>

@@ -48,11 +48,17 @@ const LoginForm = () => {
         }
         const userInfo = await loginUser(userData).then(
             r => {
+                if (r.avatar.startsWith('/')) {
+                    r.avatar = "http://localhost:8000" +  r.avatar;
+                }
                 return JSON.stringify(r, null, 4)
             })
         try {
-            if ("Success" in JSON.parse(userInfo))
+            if ("Success" in JSON.parse(userInfo)){
                 localStorage.setItem("userInfo", userInfo);
+
+            }
+
             nav('/')
         } catch (e) {
 

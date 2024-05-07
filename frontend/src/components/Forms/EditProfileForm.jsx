@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {Datepicker} from "flowbite-react";
 import formatDate from "../../tools/formatDate";
-
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
+import getCookie from "../../tools/getCookie";
 
 const EditProfileForm = ({user}) => {
     const [firstName, setFirstName] = useState(user.first_name);
@@ -10,16 +12,34 @@ const EditProfileForm = ({user}) => {
     const [avatar, setAvatar] = useState(user.avatar);
     const [dateOfBirth, setDateOfBirth] = useState(new Date(user.date_of_birth));
     const [newAvatar, setNewAvatar] = useState(null);
+    const nav = useNavigate()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const updatedUser = {
-            first_name: firstName,
-            last_name: lastName,
-            date_of_birth: dateOfBirth,
-            email: email,
-            avatar: newAvatar ? URL.createObjectURL(newAvatar) : avatar
-        };
+        const formData = new FormData();
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        formData.append('email', email);
+        formData.append('date_of_birth', formatDate(dateOfBirth));
+        if (newAvatar) {
+            formData.append('avatar', newAvatar);
+        }
+
+        try {
+            const response = await axios.patch('http://localhost:8000/api/auth/update-profile/' + user.id,
+                formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        'X-CSRFToken': getCookie('csrftoken'),
+                    },
+                    withCredentials: true
+                });
+            response.data.Success = "Login successfully"
+            localStorage.setItem("userInfo", JSON.stringify(response.data));
+            nav('/profile')
+        } catch (error) {
+            console.error('Ошибка при обновлении профиля:', error);
+        }
 
     };
 
@@ -38,7 +58,7 @@ const EditProfileForm = ({user}) => {
             <form onSubmit={handleSubmit} className="p-6">
                 <div className="mb-4">
                     <label htmlFor="avatar" className="block text-gray-700 font-bold mb-2">Фото профиля</label>
-                    <img src={avatar} alt="Profile" className="w-24 h-24 rounded-full object-cover mb-2"/>
+                        <img src={avatar} alt="Profile" className="w-24 h-24 rounded-full object-cover mb-2"/>
                     <input
                         type="file"
                         id="avatar"

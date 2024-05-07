@@ -1,8 +1,10 @@
 from typing import Dict, Any
 
+from django.db.models import QuerySet
 from django.http import JsonResponse
 from rest_framework.exceptions import ParseError
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, UpdateAPIView
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.request import Request
 from rest_framework_simplejwt import tokens
@@ -15,8 +17,9 @@ from django.conf import settings
 from rest_framework import status
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from authentication.models import User
-from authentication.serializers import UserSerializer, RotateTokenSerializer, UserRegisterSerializer
+from authentication.models import User, UserPhoto
+from authentication.serializers import UserSerializer, RotateTokenSerializer, UserRegisterSerializer, PhotoSerializer, \
+    GetUserSerializer
 
 
 def get_tokens_for_user(user):
@@ -62,7 +65,7 @@ class LoginView(APIView):
                 set_cookies(response, data)
                 response.data = data
                 response["X-CSRFToken"] = csrf.get_token(request)
-                serializer = UserSerializer(user)
+                serializer = GetUserSerializer(user)
                 response.data = {"Success": "Login successfully", **serializer.data}
                 return response
             else:
@@ -128,3 +131,20 @@ class TestView(APIView):
         return JsonResponse({
             'user': request.user.email
         })
+
+
+class UpdateUserAPIView(UpdateAPIView):
+    permission_classes = (IsAuthenticated, )
+    parser_classes = (MultiPartParser, FormParser)
+    queryset = User.objects.all()
+    serializer_class = GetUserSerializer
+
+
+class UploadPhotos(APIView):
+    parser_classes = (MultiPartParser, FormParser)
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request: Request) -> JsonResponse:
+        for photo in request.FILES.values():
+            UserPhoto.objects.create(user=request.user, photo=photo)
+        return JsonResponse({"success": True})

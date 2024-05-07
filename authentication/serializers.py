@@ -6,11 +6,28 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from authentication.models import User, UserPhoto
 
 
+class PhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserPhoto
+        fields = ('user', 'photo')
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
             'id', 'email', 'username', 'first_name', 'last_name', 'date_of_birth')
+        read_only_fields = ('id',)
+
+
+class GetUserSerializer(serializers.ModelSerializer):
+    avatar = serializers.ImageField(required=False)
+
+    class Meta:
+        model = User
+        fields = (
+            'id', 'email', 'username', 'first_name', 'last_name', 'date_of_birth', 'avatar')
+        read_only_fields = ('id',)
 
 
 class RotateTokenSerializer(TokenRefreshSerializer):
@@ -51,9 +68,3 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         model = User
         fields = (
             'email', 'username', 'first_name', 'last_name', 'password1', 'password2', 'date_of_birth')
-
-
-class PhotoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserPhoto
-        fields = ('user', 'photo')

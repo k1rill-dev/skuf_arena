@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add beauty design :)">
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add linking with backend part :)&#10;&#10;fixed bug with header">
+      <change afterPath="$PROJECT_DIR$/authentication/migrations/0007_user_avatar_alter_user_date_of_birth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Carousel/MainPageCarousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Carousel/MainPageCarousel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/EditProfileForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/EditProfileForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/RegistrationForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/RegistrationForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concerts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concerts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/MainPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Ticket.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Ticket.jsx" afterDir="false" />
     </list>
@@ -153,7 +152,9 @@
       <workItem from="1714994807248" duration="745000" />
       <workItem from="1715008889896" duration="8977000" />
       <workItem from="1715019863761" duration="835000" />
-      <workItem from="1715058725302" duration="11058000" />
+      <workItem from="1715058725302" duration="12087000" />
+      <workItem from="1715082860036" duration="145000" />
+      <workItem from="1715100605884" duration="5068000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -243,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715019924158</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add linking with backend part :)&#10;&#10;fixed bug with header">
+      <option name="closed" value="true" />
+      <created>1715070480878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715070480879</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +270,7 @@
     <MESSAGE value="register service worker" />
     <MESSAGE value="add link to vk page" />
     <MESSAGE value="add beauty design :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add beauty design :)" />
+    <MESSAGE value="add linking with backend part :)&#10;&#10;fixed bug with header" />
+    <option name="LAST_COMMIT_MESSAGE" value="add linking with backend part :)&#10;&#10;fixed bug with header" />
   </component>
 </project>
