@@ -35,7 +35,16 @@ const Concert = ({...props}) => {
         }
         fetchData();
     }, []);
-
+     const authCheck = () => {
+        try {
+            if (JSON.parse(localStorage.userInfo).Success === "Login successfully")
+                return true;
+        } catch (e) {
+            return false;
+        }
+        return false;
+    }
+    const isAuthorized = authCheck();
     const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/.*[&?]v=([a-zA-Z0-9_-]+)/;
     const match = url.match(regex);
     return (
@@ -50,8 +59,15 @@ const Concert = ({...props}) => {
                         <p className="text-gray-500 mt-2">{concertInfo.location}</p>
                         <p className="text-lg mt-4">{concertInfo.description}</p>
                         <div className="mt-4 flex items-center">
-                            <Button onClick={() => setOpenModal(true)}>Купить билет</Button>
-                            <BuyTicketForm openModal={openModal} handleModal={handleModal}/>
+                            {isAuthorized ?
+                                <div>
+                                    <Button onClick={() => setOpenModal(true)}>Купить билет</Button>
+                                    <BuyTicketForm concertInfo={concertInfo} openModal={openModal}
+                                                   handleModal={handleModal}/>
+                                </div>
+                                : <a href={"/login"}>Чтобы купить билет - авторизируйтесь</a>
+                            }
+
                         </div>
                         <div className="mt-4 flex items-center">
                             <FaVk className="mr-2" size={24}/>

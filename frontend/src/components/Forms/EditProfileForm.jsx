@@ -51,7 +51,7 @@ const EditProfileForm = ({user}) => {
         }
     };
     const handleDateChange = (date) => {
-        setDateOfBirth(formatDate(date));
+        setDateOfBirth(date);
     };
     return (
         <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
@@ -100,7 +100,7 @@ const EditProfileForm = ({user}) => {
                         className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500"
                     />
                 </div>
-                <div className={"mb-4"}>
+                <div className={"mb-64"}>
                     <label htmlFor="dateOfBirth" className="block text-sm font-medium text-gray-700">
                         Дата рождения
                     </label>

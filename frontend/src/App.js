@@ -36,7 +36,7 @@ function App() {
             <Routes>
                 <Route path="/" element={(
                     <div>
-                        <Header isAuthorized={isAuthorized} email={email}></Header>
+                        <Header email={email}></Header>
                         {/*<div className="mt-4"></div>*/}
                         <MainPage></MainPage>
                         <Footer></Footer>
@@ -47,7 +47,7 @@ function App() {
                     <div>
                         <Header isAuthorized={isAuthorized} email={email}></Header>
                         <div className="mt-4"></div>
-                        <Concerts/>
+                        <Concerts isAuthorized={isAuthorized}/>
                         <Footer></Footer>
                     </div>
                 )}></Route>

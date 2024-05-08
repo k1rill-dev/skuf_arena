@@ -4,16 +4,16 @@ import axios from "axios";
 
 async function loginUser(dataUser) {
     try {
-        const {data, status} = await axios.post (
+        const {data, status} = await axios.post(
             'http://localhost:8000/api/auth/login',
-                dataUser,
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Accept: 'application/json',
-                    },
-                    withCredentials: true
+            dataUser,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
                 },
+                withCredentials: true
+            },
         );
         return data;
     } catch (error) {
@@ -48,17 +48,20 @@ const LoginForm = () => {
         }
         const userInfo = await loginUser(userData).then(
             r => {
-                if (r.avatar.startsWith('/')) {
-                    r.avatar = "http://localhost:8000" +  r.avatar;
+                if (r.avatar !== undefined) {
+                    if (r.avatar.startsWith('/')) {
+                        r.avatar = "http://localhost:8000" + r.avatar;
+                    }
+                    return JSON.stringify(r, null, 4)
                 }
-                return JSON.stringify(r, null, 4)
+                else{
+                    setErrorMessage("Проверьте email и/или пароль!")
+                }
             })
         try {
-            if ("Success" in JSON.parse(userInfo)){
+            if ("Success" in JSON.parse(userInfo)) {
                 localStorage.setItem("userInfo", userInfo);
-
             }
-
             nav('/')
         } catch (e) {
 

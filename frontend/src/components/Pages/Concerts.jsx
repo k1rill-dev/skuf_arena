@@ -3,7 +3,7 @@ import CardComponent from '../Card/CardComponent';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-const Concerts = () => {
+const Concerts = ({isAuthorized}) => {
     const [items, setItems] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
     const [hasMore, setHasMore] = useState(true);
@@ -91,6 +91,7 @@ const Concerts = () => {
                                     id={item.id}
                                     name={item.title} artist={item.artist} date={item.date}
                                     price={item.price.price}
+                                    isAuth={isAuthorized}
                                     img={'http://127.0.0.1:8000' + item.photo_concert.photo}
                                 />
                             ))}

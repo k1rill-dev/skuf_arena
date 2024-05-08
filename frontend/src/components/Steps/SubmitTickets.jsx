@@ -1,7 +1,12 @@
 import React from 'react';
 import {Button} from "flowbite-react";
 
-const SubmitTickets = ({tickets, clearCart}) => {
+const SubmitTickets = ({tickets, clearCart, goBack}) => {
+
+    if (tickets.length === 0) {
+        alert('Выберите билетики');
+        goBack()
+    }
     return (
         <div className="flex flex-col justify-center items-center w-100">
             <div className="flex flex-col justify-center -space-y-14">

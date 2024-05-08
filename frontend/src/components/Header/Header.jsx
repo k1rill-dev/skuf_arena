@@ -1,8 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Header = ({isAuthorized, email}) => {
+const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const authCheck = () => {
+        try {
+            if (JSON.parse(localStorage.userInfo).Success === "Login successfully")
+                return [true, JSON.parse(localStorage.userInfo)];
+        } catch (e) {
+            return [false, null];
+        }
+        return [false, null];
+    }
+    const [isAuthorized, user] = authCheck();
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -10,6 +19,9 @@ const Header = ({isAuthorized, email}) => {
     const closeMenu = () => {
         setIsOpen(false);
     };
+    useEffect(() => {
+
+    }, []);
 
     return (
         <div className="bg-white shadow-md">
@@ -33,10 +45,10 @@ const Header = ({isAuthorized, email}) => {
                         {isAuthorized
                             ? (
                                 <div className={"flex flex-wrap items-center justify-center space-x-4"}>
-                                    <img className="h-8 w-8 rounded-full" src="https://placehold.co/600x400.png"
+                                    <img className="h-8 w-8 rounded-full" src={user.avatar}
                                          alt="User Avatar"/>
                                     <a href="/profile"
-                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">{email}</a>
+                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">{user.email}</a>
                                 </div>
                             )
                             : (
@@ -71,7 +83,7 @@ const Header = ({isAuthorized, email}) => {
                             ? (
                                 <div className={"flex flex-wrap items-center justify-center space-x-4"}>
                                     <a href="/profile"
-                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">{email}</a>
+                                       className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out ml-2">{user.email}</a>
                                 </div>
                             )
                             : (

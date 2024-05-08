@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {Datepicker} from "flowbite-react";
 import formatDate from "../../tools/formatDate";
+import getCookie from "../../tools/getCookie";
 
 async function createUser(dataUser) {
     try {
@@ -15,7 +16,9 @@ async function createUser(dataUser) {
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
+                    'X-CSRF-TOKEN': getCookie("csrftoken"),
                 },
+                withCredentials: true
             },
         );
         return data;
@@ -30,7 +33,6 @@ async function createUser(dataUser) {
         }
     }
 }
-
 
 
 const RegistrationForm = () => {
@@ -61,12 +63,26 @@ const RegistrationForm = () => {
 
     const handleSurnameChange = (event) => {
         setSurname(event.target.value);
+
     }
+
+    function makeid(length) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         let userData = {
             email: email,
-            username: name,
+            username: makeid(10),
             first_name: name,
             last_name: surname,
             password1: password,
@@ -86,9 +102,9 @@ const RegistrationForm = () => {
 
         }
     };
-const handleDateChange = (date) => {
-    setDateOfBirth(date);
-};
+    const handleDateChange = (date) => {
+        setDateOfBirth(date);
+    };
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center px-4 py-8">
             <div className="max-w-md w-full space-y-8">

@@ -41,7 +41,7 @@ const Profile = ({userInfo}) => {
             window.removeEventListener('storage', handleStorageChange);
         };
     }, []);
-
+    console.log(tickets)
     return (
         <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="relative pb-2/3">
@@ -61,11 +61,16 @@ const Profile = ({userInfo}) => {
                             Изменить профиль
                         </Button>
                     </a>
+                    <a href="/logout">
+                        <Button color="gray" className="mt-2">
+                            Выйти из профиля
+                        </Button>
+                    </a>
                 </div>
                 <div className="mt-8">
                     {loading ?
                         <div>Loading...</div> :
-                        Object.keys(tickets).length !== 0 && tickets.constructor === Object ? (
+                        tickets.qr_code ? (
                             <div>
                                 <h3 className="text-xl font-semibold mb-4">Купленные билеты</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
