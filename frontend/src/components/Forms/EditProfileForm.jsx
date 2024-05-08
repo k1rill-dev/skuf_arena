@@ -58,7 +58,7 @@ const EditProfileForm = ({user}) => {
             <form onSubmit={handleSubmit} className="p-6">
                 <div className="mb-4">
                     <label htmlFor="avatar" className="block text-gray-700 font-bold mb-2">Фото профиля</label>
-                        <img src={avatar} alt="Profile" className="w-24 h-24 rounded-full object-cover mb-2"/>
+                    <img src={avatar} alt="Profile" className="w-24 h-24 rounded-full object-cover mb-2"/>
                     <input
                         type="file"
                         id="avatar"
@@ -69,7 +69,16 @@ const EditProfileForm = ({user}) => {
                     <label htmlFor="avatar"
                            className="cursor-pointer bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Изменить</label>
                 </div>
-                <div className="mb-4">
+                <div className={"mb-8 mx-auto"}>
+                    <label htmlFor="dateOfBirth" className="block text-gray-700 font-bold mb-2">
+                        Дата рождения
+                    </label>
+                    <Datepicker
+                        defaultDate={dateOfBirth}
+                        onSelectedDateChanged={handleDateChange}
+                    />
+                </div>
+                <div className="mb-8">
                     <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Имя</label>
                     <input
                         type="text"
@@ -79,7 +88,7 @@ const EditProfileForm = ({user}) => {
                         className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500"
                     />
                 </div>
-                <div className="mb-4">
+                <div className="mb-8">
                     <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Фамилия</label>
                     <input
                         type="text"
@@ -90,7 +99,7 @@ const EditProfileForm = ({user}) => {
                     />
                 </div>
 
-                <div className="mb-4">
+                <div className="mb-8">
                     <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email</label>
                     <input
                         type="email"
@@ -99,16 +108,6 @@ const EditProfileForm = ({user}) => {
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500"
                     />
-                </div>
-                <div className={"mb-64"}>
-                    <label htmlFor="dateOfBirth" className="block text-sm font-medium text-gray-700">
-                        Дата рождения
-                    </label>
-                    <Datepicker
-                        defaultDate={dateOfBirth}
-                        onSelectedDateChanged={handleDateChange}
-                    />
-
                 </div>
                 <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Save
                 </button>

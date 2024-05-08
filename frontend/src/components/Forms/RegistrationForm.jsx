@@ -4,6 +4,7 @@ import axios from "axios";
 import {Datepicker} from "flowbite-react";
 import formatDate from "../../tools/formatDate";
 import getCookie from "../../tools/getCookie";
+import {data} from "autoprefixer";
 
 async function createUser(dataUser) {
     try {
@@ -46,14 +47,27 @@ const RegistrationForm = () => {
     const nav = useNavigate();
 
     const handleUsernameChange = (event) => {
-        setEmail(event.target.value);
+        if ((!event.target.value) || !(/\S+@\S+\.\S+/.test(event.target.value))) {
+            setErrorMessage('Неверный адрес электронной почты');
+        } else {
+            setErrorMessage('')
+        }
+        setEmail(event.target.value)
     };
 
     const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
+        if ((!event.target.value) || !(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(event.target.value))) {
+            setErrorMessage("Пароль слишком слабый")
+        } else {
+            setErrorMessage("");
+        }
+        setPassword(event.target.value)
     };
 
     const handleRepeatPassword = (event) => {
+        if (password !== event.target.value){
+            setErrorMessage("Пароли не совпадают!")
+        }
         setRepeatPassword(event.target.value);
     }
 
@@ -103,6 +117,9 @@ const RegistrationForm = () => {
         }
     };
     const handleDateChange = (date) => {
+        if(date > Date.now() || date < new Date("1900-01-01") || date === Date.now()){
+            setErrorMessage("Некорректная дата")
+        }
         setDateOfBirth(date);
     };
     return (

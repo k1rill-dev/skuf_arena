@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="add edit profile functionality">
+    <list default="true" id="9aaddf81-1b35-407b-948f-ea67cc3ddcf1" name="Changes" comment="fixed bugs with header, profile page.&#10;Add buy ticket functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/BuyTicketForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/BuyTicketForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/EditProfileForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/EditProfileForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/LogoutForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/LogoutForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Forms/RegistrationForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Forms/RegistrationForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concert.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Concerts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Concerts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Pages/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Steps/ChooseTicket.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Steps/ChooseTicket.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Steps/Finish.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Steps/Finish.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Steps/Payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Steps/Payment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Steps/SubmitTickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Steps/SubmitTickets.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +69,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Django Server.skuf_arena_tickets">
+  <component name="RunManager" selected="npm.start">
     <configuration name="skuf_arena_tickets" type="Python.DjangoServer" factoryName="Django server">
       <module name="skuf_arena_tickets" />
       <option name="ENV_FILES" value="" />
@@ -159,7 +147,8 @@
       <workItem from="1715058725302" duration="12087000" />
       <workItem from="1715082860036" duration="145000" />
       <workItem from="1715100605884" duration="6694000" />
-      <workItem from="1715144993153" duration="7967000" />
+      <workItem from="1715144993153" duration="10716000" />
+      <workItem from="1715170322916" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="init and create auth service, create models for tickets service and concert service">
       <option name="closed" value="true" />
@@ -265,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715105951578</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed bugs with header, profile page.&#10;Add buy ticket functionality">
+      <option name="closed" value="true" />
+      <created>1715153446342</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715153446343</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +282,7 @@
     <MESSAGE value="add beauty design :)" />
     <MESSAGE value="add linking with backend part :)&#10;&#10;fixed bug with header" />
     <MESSAGE value="add edit profile functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="add edit profile functionality" />
+    <MESSAGE value="fixed bugs with header, profile page.&#10;Add buy ticket functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs with header, profile page.&#10;Add buy ticket functionality" />
   </component>
 </project>
